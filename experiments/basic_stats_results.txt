@@ -1,0 +1,11 @@
+3000 random deals (seed 1), official rules
+
+Chooser's best card is the LOWER one: 1456/13066 real choices = 11.1% (9.7% of all 15000 choices)
+Player 2's first swap changes the result: 67.4% of deals
+Both players pass at the swap: 21.7% of deals
+
+Perfect P1 vs perfect P2               win  61.4%  tie  8.2%  loss  30.5%
+Greedy P1 vs perfect P2                win  31.7%  tie  5.8%  loss  62.5%
+Perfect P1 vs greedy P2                win  73.6%  tie  6.1%  loss  20.3%
+Greedy P2 vs perfect P1 (P2's view)    win  20.3%  tie  6.1%  loss  73.6%
+Perfect P2 vs perfect P1 (P2's view)   win  30.5%  tie  8.2%  loss  61.4%

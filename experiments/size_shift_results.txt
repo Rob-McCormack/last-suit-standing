@@ -1,0 +1,38 @@
+solver check: matches solver.py on 50 six-card deals
+perfect play on the test deals, P1 win / tie: 4 cards 49%/14%, 5 cards 2%/1%, 6 cards 57%/13%, 7 cards 2%/0%, 8 cards 84%/3%
+seed 0 trained on 4 cards (47910 positions) [142s]
+seed 0 trained on 5 cards (71151 positions) [225s]
+seed 0 trained on 6 cards (94671 positions) [289s]
+seed 0 trained on 7 cards (118989 positions) [414s]
+seed 0 trained on 8 cards (143103 positions) [726s]
+seed 1 trained on 4 cards (47991 positions) [858s]
+seed 1 trained on 5 cards (70971 positions) [953s]
+seed 1 trained on 6 cards (94914 positions) [1029s]
+seed 1 trained on 7 cards (118092 positions) [1166s]
+seed 1 trained on 8 cards (142272 positions) [1472s]
+
+Points lost per game vs perfect play (both seats averaged). Rows: trained on; columns: tested on
+                      4 cards        5 cards        6 cards        7 cards        8 cards
+4 cards                  0.37           7.72           6.75          15.18          14.47
+5 cards                  2.60           1.72           8.58           8.82          15.68
+6 cards                  1.34           4.31           2.42          11.05           8.70
+7 cards                  2.52           2.32           6.98           4.03          13.45
+8 cards                  1.78           3.56           4.09           9.41           5.43
+greedy                   1.29           2.90           4.41           7.26           9.88
+
+Share of games with a worse result (win/tie/loss) than perfect play
+                      4 cards        5 cards        6 cards        7 cards        8 cards
+4 cards                  6.2%          11.0%          42.6%          18.8%          44.6%
+5 cards                 23.1%           3.9%          41.8%          19.0%          39.9%
+6 cards                 13.9%           9.0%          20.9%          17.9%          29.4%
+7 cards                 21.2%           5.5%          41.2%           6.1%          35.8%
+8 cards                 16.9%           8.6%          29.0%          18.0%          17.6%
+greedy                  14.0%           5.5%          28.7%          11.5%          33.2%
+
+Transfer penalty: extra points lost by the 6-card network vs a network trained on the test size
+  4 cards (same parity): +0.97 [+0.74, +1.20]; per seed +0.91 +1.02
+  5 cards (OPPOSITE parity): +2.59 [+2.05, +3.14]; per seed +2.48 +2.69
+  7 cards (OPPOSITE parity): +7.03 [+6.09, +7.95]; per seed +7.09 +6.96
+  8 cards (same parity): +3.27 [+2.54, +4.03]; per seed +2.56 +3.98
+
+total time 1474s

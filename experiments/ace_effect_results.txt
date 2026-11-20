@@ -1,0 +1,11 @@
+400 matched pairs (seed 3); models trained on 6 cards, 1,500 deals, seed 0
+
+target   pairs  true change  winner flips  MLP est.  Trees est.  MLP / true  Trees / true
+ace        185         4.30         37.8%      2.14        0.48        0.50          0.11
+ten        215         2.53         25.6%      2.19        0.53        0.87          0.21
+
+true: ace change minus ten change = +1.78 points
+MLP: ace change minus ten change = -0.06 points (captures -3% of the true ace-over-ten gap)
+Trees: ace change minus ten change = -0.06 points (captures -3% of the true ace-over-ten gap)
+Prediction, MLP: est/true ratio ace 0.50 vs ten 0.87; difference -0.37 [-0.60, -0.18] -> CONFIRMED (underrates the ace)
+Prediction, Trees: est/true ratio ace 0.11 vs ten 0.21; difference -0.10 [-0.15, -0.06] -> CONFIRMED (underrates the ace)

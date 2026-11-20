@@ -1,0 +1,110 @@
+pre-registered run: sizes [250, 1000, 4000], seeds [0, 1, 2, 3], stages [10, 20, 40, 80, 160, 200], epochs 200, test 200, val 60, trees 500
+validation positions...
+  6 cards: 1255 positions
+  7 cards: 1546 positions
+  8 cards: 1868 positions
+seed 0: 4000 six-card deals, 252726 positions [49s]
+  seed 0 mlp n=250 (15969 rows) chose 6-card pass 80, mixed pass 10 [69s]
+  seed 0 trees n=250 [207s]
+  seed 0 mlp n=1000 (63210 rows) chose 6-card pass 20, mixed pass 10 [251s]
+  seed 0 trees n=1000 [400s]
+  seed 0 mlp n=4000 (252726 rows) chose 6-card pass 80, mixed pass 10 [535s]
+  seed 0 trees n=4000 [675s]
+seed 1: 4000 six-card deals, 253005 positions [695s]
+  seed 1 mlp n=250 (15783 rows) chose 6-card pass 40, mixed pass 10 [716s]
+  seed 1 trees n=250 [835s]
+  seed 1 mlp n=1000 (63294 rows) chose 6-card pass 10, mixed pass 10 [879s]
+  seed 1 trees n=1000 [1005s]
+  seed 1 mlp n=4000 (253005 rows) chose 6-card pass 40, mixed pass 10 [1140s]
+  seed 1 trees n=4000 [1292s]
+seed 2: 4000 six-card deals, 252987 positions [1312s]
+  seed 2 mlp n=250 (15756 rows) chose 6-card pass 20, mixed pass 10 [1332s]
+  seed 2 trees n=250 [1451s]
+  seed 2 mlp n=1000 (63045 rows) chose 6-card pass 20, mixed pass 10 [1496s]
+  seed 2 trees n=1000 [1616s]
+  seed 2 mlp n=4000 (252987 rows) chose 6-card pass 40, mixed pass 20 [1752s]
+  seed 2 trees n=4000 [1882s]
+seed 3: 4000 six-card deals, 252357 positions [1902s]
+  seed 3 mlp n=250 (15717 rows) chose 6-card pass 20, mixed pass 10 [1922s]
+  seed 3 trees n=250 [2039s]
+  seed 3 mlp n=1000 (63195 rows) chose 6-card pass 20, mixed pass 10 [2084s]
+  seed 3 trees n=1000 [2250s]
+  seed 3 mlp n=4000 (252357 rows) chose 6-card pass 10, mixed pass 10 [2386s]
+  seed 3 trees n=4000 [2562s]
+
+MLP: points lost per game (mean of seeds)
+pass    deals             6 cards        7 cards        8 cards
+10      250                  3.06           7.82           8.33
+10      1000                 2.35           9.17           8.68
+10      4000                 2.14          10.49           9.28
+        greedy               4.41           7.26           9.88
+20      250                  3.14           8.83           9.79
+20      1000                 2.38           9.72           9.06
+20      4000                 2.15          10.79           9.88
+        greedy               4.41           7.26           9.88
+40      250                  3.29          10.06          11.18
+40      1000                 2.59          10.42          10.20
+40      4000                 2.16          11.01          10.86
+        greedy               4.41           7.26           9.88
+80      250                  3.66          10.50          11.83
+80      1000                 2.97          11.85          11.25
+80      4000                 2.28          11.54          11.69
+        greedy               4.41           7.26           9.88
+160     250                  3.82          11.44          12.99
+160     1000                 3.44          11.98          12.59
+160     4000                 2.23          12.45          12.18
+        greedy               4.41           7.26           9.88
+200     250                  4.08          11.69          13.23
+200     1000                 3.77          12.53          13.20
+200     4000                 2.30          12.54          12.22
+        greedy               4.41           7.26           9.88
+  change from 250 to 4000 deals (negative = improves), 95% CI; per seed:
+    pass 10 6 cards: -0.92 [-1.16, -0.68] improves; per seed -0.87 -0.89 -0.95 -0.96
+    pass 10 7 cards: +2.66 [+1.94, +3.42] RISES; per seed +4.05 +2.35 +3.12 +1.14
+    pass 10 8 cards: +0.95 [+0.36, +1.57] RISES; per seed +1.74 +0.38 +0.85 +0.84
+    pass 20 6 cards: -0.99 [-1.28, -0.71] improves; per seed -0.52 -1.08 -1.24 -1.12
+    pass 20 7 cards: +1.96 [+1.32, +2.64] RISES; per seed +3.18 +2.01 +1.88 +0.76
+    pass 20 8 cards: +0.09 [-0.45, +0.62] flat; per seed +1.57 +0.00 -0.66 -0.57
+    pass 40 6 cards: -1.13 [-1.42, -0.84] improves; per seed -0.77 -1.18 -1.60 -0.97
+    pass 40 7 cards: +0.95 [+0.37, +1.53] RISES; per seed +1.71 +1.27 +1.44 -0.64
+    pass 40 8 cards: -0.32 [-0.88, +0.26] flat; per seed +0.02 -0.04 -1.26 +0.00
+    pass 80 6 cards: -1.38 [-1.70, -1.08] improves; per seed -1.14 -1.29 -1.88 -1.22
+    pass 80 7 cards: +1.04 [+0.44, +1.64] RISES; per seed +1.74 +2.42 -0.43 +0.42
+    pass 80 8 cards: -0.14 [-0.76, +0.52] flat; per seed +0.26 +0.67 -1.91 +0.43
+    pass 160 6 cards: -1.59 [-1.92, -1.26] improves; per seed -1.34 -1.64 -1.60 -1.76
+    pass 160 7 cards: +1.01 [+0.36, +1.67] RISES; per seed +2.13 +1.29 +0.10 +0.53
+    pass 160 8 cards: -0.81 [-1.39, -0.23] improves; per seed -0.71 -0.17 -2.29 -0.06
+    pass 200 6 cards: -1.79 [-2.16, -1.46] improves; per seed -1.64 -2.11 -1.86 -1.54
+    pass 200 7 cards: +0.85 [+0.21, +1.51] RISES; per seed +1.80 +0.49 +0.69 +0.42
+    pass 200 8 cards: -1.01 [-1.62, -0.38] improves; per seed -0.84 -1.56 -1.72 +0.07
+
+Chosen passes (6-card validation MSE, then mixed-size MSE):
+  seed 0 n=250: 80/10  n=1000: 20/10  n=4000: 80/10
+  seed 1 n=250: 40/10  n=1000: 10/10  n=4000: 40/10
+  seed 2 n=250: 20/10  n=1000: 20/10  n=4000: 40/20
+  seed 3 n=250: 20/10  n=1000: 20/10  n=4000: 10/10
+
+Selected nets, 4000 minus 250, 7 cards:
+  6-card validation: +1.49 [+0.88, +2.07] RISES; per seed +1.74 +1.27 +2.71 +0.22
+  mixed-size validation: +2.64 [+1.93, +3.38] RISES; per seed +4.05 +2.35 +3.04 +1.14
+
+Trees, 500 iterations, no early stopping
+deals             6 cards        7 cards        8 cards
+250                  2.76           8.70           8.79
+1000                 2.10           8.99           8.09
+4000                 1.75           9.22           7.55
+greedy               4.41           7.26           9.88
+  change from 250 to 4000:
+    6 cards: -1.01 [-1.26, -0.76] improves; per seed -1.13 -1.03 -0.93 -0.93
+    7 cards: +0.51 [+0.02, +1.03] RISES; per seed +1.00 +0.31 +0.36 +0.39
+    8 cards: -1.24 [-1.73, -0.74] improves; per seed -1.52 -1.52 -0.89 -1.02
+
+Predictions (call was fixed before the run):
+  a  observed Yes  call Yes  At pass 200, 6-card loss falls from 250 to 4,000 deals
+  b  observed Yes  call Yes  At pass 200, 7-card loss rises from 250 to 4,000 deals
+  c  observed Yes  call No   7-card loss rises from 250 to 4,000 at every stage
+  d  observed Yes  call No   Mixed-size validation choice: 7-card loss rises from 250 to 4,000
+  e  observed No   call Yes  Trees, 500 iterations: 7-card loss does not rise from 250 to 4,000
+  f  observed Yes  call Yes  6-card validation choice: 7-card loss rises from 250 to 4,000
+
+total time 2562s

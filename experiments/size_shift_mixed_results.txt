@@ -1,0 +1,22 @@
+seed 0 mix 6+7 (213660 positions) [389s]
+seed 0 mix 6+8 (237774 positions) [805s]
+seed 1 mix 6+7 (213006 positions) [1122s]
+seed 1 mix 6+8 (237186 positions) [1528s]
+
+Points lost per game vs perfect play (both seats averaged)
+                    4 cards        5 cards        6 cards        7 cards        8 cards
+mix 6+7                3.11           4.44           2.58           4.26          15.36
+mix 6+8                0.91           4.66           2.30           9.55           5.36
+
+Share of games with a worse result than perfect play
+mix 6+7               26.5%          10.6%          22.8%           6.5%          41.1%
+mix 6+8               10.9%           9.2%          20.1%          17.1%          17.8%
+
+Difference, mix 6+8 minus mix 6+7 (positive = the link-breaking mix does better), 95% CI
+  4 cards: -2.20 [-2.50, -1.88]; per seed -2.79 -1.60
+  5 cards: +0.22 [-0.25, +0.69]; per seed -0.43 +0.88
+  6 cards: -0.28 [-0.52, -0.05]; per seed -0.23 -0.34
+  7 cards: +5.28 [+4.38, +6.17]; per seed +4.57 +6.00
+  8 cards: -10.01 [-11.19, -8.83]; per seed -9.76 -10.26
+
+total time 1528s

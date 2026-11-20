@@ -1,0 +1,156 @@
+Slot-free encoding, then a plain-encoding reproduction check.
+MLP, seeds 0 and 1, 1,500 deals per size, 200 test deals. scikit-learn 1.9.1.
+The plain check does not reproduce the earlier file exactly.
+Earlier LL: 6-only on 7 cards 11.05, mix 6+7 on 8 cards 15.36.
+This plain run: 11.12 and 15.69.
+The earlier file was not committed before that run. It remains the record of that run.
+
+=== slot-free ===
+Points lost per game vs perfect play; mean of 2 seeds; 95% bootstrap CI over deals
+
+6-only tested on 6 cards
+  both seats LL   2.80  SL   1.19  LS   1.75  SS   0.00
+  as P1      LL   3.01  SL   1.12  LS   2.09  SS   0.00
+  as P2      LL   2.59  SL   1.26  LS   1.41  SS   0.00
+  offer repair  R_SL - R_LL          -1.61 [-1.87, -1.36]
+  choice repair R_LS - R_LL          -1.05 [-1.25, -0.85]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.14 [-0.06, +0.34]
+  offer minus choice R_SL - R_LS     -0.56 [-0.85, -0.28]
+  per seed, offer repair: -1.60 -1.62; choice repair: -1.15 -0.95
+  games where offer repair is worse: 5.5%, better: 40.9%, same: 53.6%
+  games where choice repair is worse: 4.0%
+
+6-only tested on 7 cards
+  both seats LL  11.40  SL   5.01  LS   7.12  SS   0.00
+  as P1      LL  11.07  SL   6.39  LS   5.33  SS   0.00
+  as P2      LL  11.72  SL   3.62  LS   8.91  SS   0.00
+  offer repair  R_SL - R_LL          -6.39 [-7.32, -5.49]
+  choice repair R_LS - R_LL          -4.28 [-4.83, -3.72]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.73 [+0.09, +1.40]
+  offer minus choice R_SL - R_LS     -2.12 [-3.08, -1.18]
+  per seed, offer repair: -6.28 -6.51; choice repair: -4.21 -4.34
+  games where offer repair is worse: 12.2%, better: 67.0%, same: 20.7%
+  games where choice repair is worse: 5.4%
+
+6-only tested on 8 cards
+  both seats LL   6.40  SL   2.23  LS   4.71  SS   0.00
+  as P1      LL   7.05  SL   1.64  LS   5.82  SS   0.00
+  as P2      LL   5.74  SL   2.81  LS   3.60  SS   0.00
+  offer repair  R_SL - R_LL          -4.17 [-4.82, -3.57]
+  choice repair R_LS - R_LL          -1.69 [-2.06, -1.32]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.54 [+0.12, +0.96]
+  offer minus choice R_SL - R_LS     -2.48 [-3.12, -1.85]
+  per seed, offer repair: -3.63 -4.71; choice repair: -1.28 -2.10
+  games where offer repair is worse: 9.4%, better: 59.5%, same: 31.1%
+  games where choice repair is worse: 8.2%
+
+mix 6+7 tested on 6 cards
+  both seats LL   2.67  SL   1.16  LS   1.76  SS   0.00
+  as P1      LL   2.86  SL   1.27  LS   1.99  SS   0.00
+  as P2      LL   2.48  SL   1.05  LS   1.54  SS   0.00
+  offer repair  R_SL - R_LL          -1.50 [-1.74, -1.27]
+  choice repair R_LS - R_LL          -0.91 [-1.08, -0.73]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.26 [+0.07, +0.46]
+  offer minus choice R_SL - R_LS     -0.60 [-0.88, -0.34]
+  per seed, offer repair: -1.53 -1.48; choice repair: -0.92 -0.89
+  games where offer repair is worse: 6.1%, better: 40.5%, same: 53.4%
+  games where choice repair is worse: 3.8%
+
+mix 6+7 tested on 7 cards
+  both seats LL   4.33  SL   1.91  LS   2.43  SS   0.00
+  as P1      LL   4.87  SL   2.17  LS   2.82  SS   0.00
+  as P2      LL   3.79  SL   1.66  LS   2.04  SS   0.00
+  offer repair  R_SL - R_LL          -2.42 [-2.79, -2.07]
+  choice repair R_LS - R_LL          -1.90 [-2.22, -1.60]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.01 [-0.26, +0.28]
+  offer minus choice R_SL - R_LS     -0.52 [-0.93, -0.10]
+  per seed, offer repair: -2.49 -2.35; choice repair: -1.78 -2.01
+  games where offer repair is worse: 7.5%, better: 50.5%, same: 42.0%
+  games where choice repair is worse: 4.4%
+
+mix 6+7 tested on 8 cards
+  both seats LL  13.19  SL   3.71  LS   9.65  SS   0.00
+  as P1      LL  17.01  SL   3.70  LS  14.06  SS   0.00
+  as P2      LL   9.37  SL   3.71  LS   5.25  SS   0.00
+  offer repair  R_SL - R_LL          -9.48 [-10.51, -8.50]
+  choice repair R_LS - R_LL          -3.53 [-4.14, -2.94]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.17 [-0.44, +0.80]
+  offer minus choice R_SL - R_LS     -5.95 [-6.91, -4.98]
+  per seed, offer repair: -8.92 -10.04; choice repair: -3.73 -3.33
+  games where offer repair is worse: 10.2%, better: 75.2%, same: 14.5%
+  games where choice repair is worse: 10.4%
+
+=== plain (reproduction check, not exact) ===
+Points lost per game vs perfect play; mean of 2 seeds; 95% bootstrap CI over deals
+
+6-only tested on 6 cards
+  both seats LL   2.44  SL   0.90  LS   1.72  SS   0.00
+  as P1      LL   2.54  SL   0.92  LS   1.69  SS   0.00
+  as P2      LL   2.35  SL   0.88  LS   1.75  SS   0.00
+  offer repair  R_SL - R_LL          -1.54 [-1.80, -1.29]
+  choice repair R_LS - R_LL          -0.72 [-0.92, -0.54]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.17 [-0.01, +0.37]
+  offer minus choice R_SL - R_LS     -0.82 [-1.11, -0.54]
+  per seed, offer repair: -1.47 -1.61; choice repair: -0.79 -0.66
+  games where offer repair is worse: 4.0%, better: 39.8%, same: 56.2%
+  games where choice repair is worse: 4.9%
+
+6-only tested on 7 cards
+  both seats LL  11.12  SL   4.18  LS   7.12  SS   0.00
+  as P1      LL  12.18  SL   6.23  LS   6.26  SS   0.00
+  as P2      LL  10.07  SL   2.12  LS   7.98  SS   0.00
+  offer repair  R_SL - R_LL          -6.95 [-7.90, -6.03]
+  choice repair R_LS - R_LL          -4.00 [-4.68, -3.40]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.17 [-0.47, +0.82]
+  offer minus choice R_SL - R_LS     -2.94 [-3.90, -2.00]
+  per seed, offer repair: -6.87 -7.03; choice repair: -4.29 -3.71
+  games where offer repair is worse: 10.1%, better: 68.0%, same: 21.9%
+  games where choice repair is worse: 7.0%
+
+6-only tested on 8 cards
+  both seats LL   9.03  SL   2.10  LS   7.13  SS   0.00
+  as P1      LL  12.18  SL   2.46  LS  10.02  SS   0.00
+  as P2      LL   5.88  SL   1.75  LS   4.24  SS   0.00
+  offer repair  R_SL - R_LL          -6.93 [-7.89, -6.09]
+  choice repair R_LS - R_LL          -1.90 [-2.29, -1.53]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.20 [-0.24, +0.64]
+  offer minus choice R_SL - R_LS     -5.03 [-5.90, -4.19]
+  per seed, offer repair: -7.47 -6.39; choice repair: -1.78 -2.03
+  games where offer repair is worse: 7.5%, better: 69.9%, same: 22.6%
+  games where choice repair is worse: 9.9%
+
+mix 6+7 tested on 6 cards
+  both seats LL   2.47  SL   0.93  LS   1.86  SS   0.00
+  as P1      LL   2.78  SL   1.07  LS   2.08  SS   0.00
+  as P2      LL   2.15  SL   0.79  LS   1.65  SS   0.00
+  offer repair  R_SL - R_LL          -1.53 [-1.82, -1.25]
+  choice repair R_LS - R_LL          -0.60 [-0.78, -0.44]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.33 [+0.16, +0.51]
+  offer minus choice R_SL - R_LS     -0.93 [-1.24, -0.63]
+  per seed, offer repair: -1.34 -1.73; choice repair: -0.60 -0.60
+  games where offer repair is worse: 5.1%, better: 41.1%, same: 53.8%
+  games where choice repair is worse: 3.6%
+
+mix 6+7 tested on 7 cards
+  both seats LL   4.29  SL   1.37  LS   3.23  SS   0.00
+  as P1      LL   4.88  SL   1.28  LS   3.75  SS   0.00
+  as P2      LL   3.69  SL   1.45  LS   2.70  SS   0.00
+  offer repair  R_SL - R_LL          -2.92 [-3.37, -2.51]
+  choice repair R_LS - R_LL          -1.06 [-1.34, -0.80]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.31 [+0.04, +0.57]
+  offer minus choice R_SL - R_LS     -1.86 [-2.32, -1.42]
+  per seed, offer repair: -3.07 -2.77; choice repair: -1.09 -1.03
+  games where offer repair is worse: 5.6%, better: 53.4%, same: 41.0%
+  games where choice repair is worse: 4.5%
+
+mix 6+7 tested on 8 cards
+  both seats LL  15.69  SL   5.00  LS  11.07  SS   0.00
+  as P1      LL  19.20  SL   3.05  LS  16.44  SS   0.00
+  as P2      LL  12.17  SL   6.96  LS   5.69  SS   0.00
+  offer repair  R_SL - R_LL         -10.68 [-11.84, -9.53]
+  choice repair R_LS - R_LL          -4.62 [-5.30, -3.95]
+  interaction R_SL+R_LS-R_LL-R_SS    +0.39 [-0.36, +1.13]
+  offer minus choice R_SL - R_LS     -6.06 [-7.14, -4.97]
+  per seed, offer repair: -10.55 -10.80; choice repair: -5.20 -4.04
+  games where offer repair is worse: 10.1%, better: 77.0%, same: 12.9%
+  games where choice repair is worse: 9.1%

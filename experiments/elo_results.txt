@@ -1,0 +1,28 @@
+models trained [73s]
+sanity: Exploiter achieves its computed best response against Greedy
+9000 games played [189s]
+
+Rank by Elo (95% bootstrap CI over deals) vs exact strength
+    player         Elo               CI   score   pts lost vs Perfect  true rank
+1   Perfect       1669  [  1657,   1683]   71.4%                  0.00          1
+2   Exploiter     1623  [  1613,   1634]   65.0%                  1.90          2
+3   Trees         1567  [  1558,   1578]   57.0%                  1.95          3
+4   MLP           1565  [  1555,   1577]   56.6%                  2.40          4
+5   Greedy        1475  [  1461,   1489]   43.7%                  4.46          5
+6   Random        1100  [  1077,   1120]    6.3%                 15.08          6
+
+Head-to-head score (row player's score rate vs column player, both seats)
+              Perfect Exploiter       MLP     Trees    Greedy    Random
+Perfect             —     60.6%     64.7%     64.0%     71.6%     96.2%
+Exploiter       39.4%         —     56.5%     56.3%     79.6%     93.3%
+MLP             35.3%     43.5%         —     49.1%     61.3%     94.0%
+Trees           36.0%     43.7%     50.9%         —     60.7%     93.5%
+Greedy          28.4%     20.4%     38.8%     39.3%         —     91.6%
+Random           3.8%      6.7%      6.0%      6.5%      8.4%         —
+
+Pre-registered predictions:
+  1. Perfect ranks first by Elo: CONFIRMED
+  2. Exploiter rated above an objectively stronger player: not confirmed
+  Exploiter minus Perfect: -46 Elo, 95% CI [-59, -32]
+
+total time 244s

@@ -1,0 +1,59 @@
+seed 0: 4000 deals, 252726 positions [86s]
+  seed 0 mlp n=250 (15969 positions) [94s]
+  seed 0 trees n=250 (15969 positions) [173s]
+  seed 0 mlp n=500 (31632 positions) [194s]
+  seed 0 trees n=500 (31632 positions) [270s]
+  seed 0 mlp n=1500 (94671 positions) [312s]
+  seed 0 trees n=1500 (94671 positions) [395s]
+  seed 0 mlp n=4000 (252726 positions) [864s]
+  seed 0 trees n=4000 (252726 positions) [963s]
+seed 1: 4000 deals, 253005 positions [1004s]
+  seed 1 mlp n=250 (15783 positions) [1014s]
+  seed 1 trees n=250 (15783 positions) [1093s]
+  seed 1 mlp n=500 (31677 positions) [1106s]
+  seed 1 trees n=500 (31677 positions) [1183s]
+  seed 1 mlp n=1500 (94914 positions) [1237s]
+  seed 1 trees n=1500 (94914 positions) [1321s]
+  seed 1 mlp n=4000 (253005 positions) [1802s]
+  seed 1 trees n=4000 (253005 positions) [1905s]
+seed 2: 4000 deals, 252987 positions [1947s]
+  seed 2 mlp n=250 (15756 positions) [1956s]
+  seed 2 trees n=250 (15756 positions) [2031s]
+  seed 2 mlp n=500 (31527 positions) [2046s]
+  seed 2 trees n=500 (31527 positions) [2123s]
+  seed 2 mlp n=1500 (94887 positions) [2173s]
+  seed 2 trees n=1500 (94887 positions) [2258s]
+  seed 2 mlp n=4000 (252987 positions) [2610s]
+  seed 2 trees n=4000 (252987 positions) [2716s]
+
+mlp: points lost per game vs perfect play (mean of seeds [0, 1, 2])
+deals             4 cards        5 cards        6 cards        7 cards        8 cards
+250                  1.41           3.66           3.18           9.21          10.13
+500                  1.46           3.79           2.65          10.18           9.74
+1500                 1.40           4.28           2.42          10.97           9.48
+4000                 1.72           4.33           2.03          11.98          11.38
+greedy               1.29           2.90           4.41           7.26           9.88
+  change from 250 to 4000 deals (negative = improves), 95% CI:
+    4 cards: +0.32 [+0.12, +0.51] INVERSE SCALING; per seed +0.38 +0.45 +0.13
+    5 cards: +0.67 [+0.22, +1.13] INVERSE SCALING; per seed +0.88 +0.45 +0.68
+    6 cards: -1.15 [-1.48, -0.83] IMPROVES; per seed -0.73 -1.17 -1.54
+    7 cards: +2.77 [+2.08, +3.54] INVERSE SCALING; per seed +2.97 +2.25 +3.10
+    8 cards: +1.25 [+0.64, +1.87] INVERSE SCALING; per seed +1.76 +2.17 -0.20
+
+trees: points lost per game vs perfect play (mean of seeds [0, 1, 2])
+deals             4 cards        5 cards        6 cards        7 cards        8 cards
+250                  1.26           3.41           2.77           8.64           8.94
+500                  1.17           3.67           2.32           8.91           8.30
+1500                 1.07           3.37           1.92           8.69           7.68
+4000                 1.07           3.36           1.78           8.95           7.75
+greedy               1.29           2.90           4.41           7.26           9.88
+  change from 250 to 4000 deals (negative = improves), 95% CI:
+    4 cards: -0.19 [-0.30, -0.09] IMPROVES; per seed -0.19 -0.22 -0.17
+    5 cards: -0.05 [-0.29, +0.20] flat; per seed -0.38 +0.01 +0.23
+    6 cards: -1.00 [-1.28, -0.71] IMPROVES; per seed -0.95 -1.06 -0.97
+    7 cards: +0.32 [-0.24, +0.91] flat; per seed +0.03 +0.46 +0.46
+    8 cards: -1.19 [-1.81, -0.57] IMPROVES; per seed -1.18 -1.38 -1.00
+
+sanity check, MLP 1500 deals seeds 0-1 (expect 2.42 / 11.05 / 8.70): 2.42 / 11.05 / 8.70
+
+total time 2716s

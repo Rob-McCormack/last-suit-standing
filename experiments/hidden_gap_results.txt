@@ -1,0 +1,17 @@
+5000 random deals (seed 2026)
+Deals with tied best openings (official rules): 18.0%
+Fragile deals (hidden gap > 0): 15.18%  (95% Wilson CI 14.21% to 16.20%)
+Mean hidden gap per deal: 1.188 points  (95% bootstrap CI 1.079 to 1.298)
+Among fragile deals: mean gap 7.82, max 42
+Undo-rule regret of an official-optimal opening: leftmost tie-break 2.24, random tie-break 2.24 points/deal
+Pre-registered prediction (rate >= 5%, mean gap >= 0.25): SUPPORTED
+
+Largest gap found (42 points): deal 6♣ 3♥ 2♦ 10♣ 7♠ 10♦
+  opening     official  undo
+  6♣-3♥            +1   -16  <- tied best (official)
+  3♥-2♦            +1    -4  <- tied best (official)
+  2♦-10♣           -4   -51
+  10♣-7♠           +1   -46  <- tied best (official)
+  7♠-10♦           +1   -16  <- tied best (official)
+
+time 72s

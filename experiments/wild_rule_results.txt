@@ -1,0 +1,10 @@
+sanity: without the wild rule, values match solver.py on 100 deals
+
+3000 random deals (seed 1)
+deals where a wild is possible at all (some rank appears twice among the 6 cards): 77.4%
+Player 1 wins: official 61.4%, wild 53.9% (change -7.4 points)
+ties:          official 8.2%, wild 7.6%
+deals whose perfect-play value changes: 34.9%
+deals whose result (win/tie/loss) changes: 15.2%
+value moves toward Player 1 in 8.3% of deals, toward Player 2 in 26.6%
+mean margin (P1 - P2): official +3.27, wild +2.24

@@ -1,0 +1,108 @@
+feature self-check passed (50 inputs); stream matches scaling.py on 2 deals
+pre-registered run: sizes [250, 500, 1500, 4000], mix 1500, seeds [0, 1, 2], test deals 200
+seed 0: 4000 six-card deals, 252726 positions; 1500 seven-card deals, 118989 positions [78s]
+  seed 0 mlp n=250 (15969 positions) [83s]
+  seed 0 trees n=250 (15969 positions) [261s]
+  seed 0 mlp n=500 (31632 positions) [275s]
+  seed 0 trees n=500 (31632 positions) [455s]
+  seed 0 mlp n=1500 (94671 positions) [479s]
+  seed 0 trees n=1500 (94671 positions) [659s]
+  seed 0 mlp n=4000 (252726 positions) [735s]
+  seed 0 trees n=4000 (252726 positions) [896s]
+  seed 0 mlp mix 6+7 (94671+118989 positions) [978s]
+  seed 0 trees mix 6+7 (94671+118989 positions) [1135s]
+seed 1: 4000 six-card deals, 253005 positions; 1500 seven-card deals, 118092 positions [1192s]
+  seed 1 mlp n=250 (15783 positions) [1198s]
+  seed 1 trees n=250 (15783 positions) [1374s]
+  seed 1 mlp n=500 (31677 positions) [1388s]
+  seed 1 trees n=500 (31677 positions) [1565s]
+  seed 1 mlp n=1500 (94914 positions) [1590s]
+  seed 1 trees n=1500 (94914 positions) [1764s]
+  seed 1 mlp n=4000 (253005 positions) [1833s]
+  seed 1 trees n=4000 (253005 positions) [1997s]
+  seed 1 mlp mix 6+7 (94914+118092 positions) [2058s]
+  seed 1 trees mix 6+7 (94914+118092 positions) [2214s]
+seed 2: 4000 six-card deals, 252987 positions; 1500 seven-card deals, 118599 positions [2271s]
+  seed 2 mlp n=250 (15756 positions) [2276s]
+  seed 2 trees n=250 (15756 positions) [2464s]
+  seed 2 mlp n=500 (31527 positions) [2476s]
+  seed 2 trees n=500 (31527 positions) [2645s]
+  seed 2 mlp n=1500 (94887 positions) [2668s]
+  seed 2 trees n=1500 (94887 positions) [2826s]
+  seed 2 mlp n=4000 (252987 positions) [2916s]
+  seed 2 trees n=4000 (252987 positions) [3074s]
+  seed 2 mlp mix 6+7 (94887+118599 positions) [3163s]
+  seed 2 trees mix 6+7 (94887+118599 positions) [3319s]
+
+Part B: points lost per game vs perfect play (mean of seeds)
+
+mlp
+deals             4 cards        5 cards        6 cards        7 cards        8 cards
+250                  1.41           5.72           3.48          10.63           6.98
+500                  1.46           5.72           3.45          11.74           7.87
+1500                 1.25           6.05           2.78          11.47           6.42
+4000                 0.85           6.11           2.18          11.62           5.46
+greedy               1.29           2.90           4.41           7.26           9.88
+  change from 250 to 4000 deals (negative = improves), 95% CI:
+    4 cards: -0.55 [-0.73, -0.39] IMPROVES; per seed -0.52 -0.64 -0.50
+    5 cards: +0.39 [-0.21, +0.97] flat; per seed +0.27 +0.08 +0.82
+    6 cards: -1.30 [-1.61, -1.00] IMPROVES; per seed -1.25 -1.48 -1.18
+    7 cards: +1.00 [+0.40, +1.61] INVERSE SCALING; per seed +0.89 +0.70 +1.40
+    8 cards: -1.51 [-2.03, -1.00] IMPROVES; per seed -1.07 -2.09 -1.38
+
+trees
+deals             4 cards        5 cards        6 cards        7 cards        8 cards
+250                  0.98           5.14           2.63           9.95           7.32
+500                  1.03           5.42           2.32          10.33           6.68
+1500                 0.84           5.56           1.90          10.62           6.02
+4000                 0.77           5.70           1.80          10.15           5.14
+greedy               1.29           2.90           4.41           7.26           9.88
+  change from 250 to 4000 deals (negative = improves), 95% CI:
+    4 cards: -0.21 [-0.35, -0.10] IMPROVES; per seed -0.14 -0.34 -0.17
+    5 cards: +0.55 [+0.06, +1.05] INVERSE SCALING; per seed +0.27 +0.09 +1.30
+    6 cards: -0.82 [-1.06, -0.59] IMPROVES; per seed -0.77 -0.75 -0.95
+    7 cards: +0.21 [-0.46, +0.90] flat; per seed +0.20 +0.32 +0.11
+    8 cards: -2.18 [-2.70, -1.69] IMPROVES; per seed -2.37 -1.96 -2.20
+
+Part A: 6-only vs mix 6+7, 1500 deals per size
+6-only reuses the Part B model trained on that six-card prefix.
+points lost per game vs perfect play (mean of seeds)
+                          4 cards        5 cards        6 cards        7 cards        8 cards
+mlp 6-only                   1.25           6.05           2.78          11.47           6.42
+mlp mix 6+7                  1.10           2.06           2.71           4.58          13.54
+trees 6-only                 0.84           5.56           1.90          10.62           6.02
+trees mix 6+7                1.15           1.58           2.48           3.03           8.88
+greedy                       1.29           2.90           4.41           7.26           9.88
+  mix 6+7 minus 6-only (positive = mix loses more), 95% CI:
+    mlp 4 cards: -0.15 [-0.28, -0.02]; per seed -0.12 -0.41 +0.07
+    mlp 5 cards: -3.99 [-4.61, -3.39]; per seed -4.25 -3.47 -4.23
+    mlp 6 cards: -0.07 [-0.28, +0.14]; per seed -0.17 -0.09 +0.05
+    mlp 7 cards: -6.89 [-7.87, -6.00]; per seed -6.93 -7.21 -6.54
+    mlp 8 cards: +7.12 [+6.07, +8.16]; per seed +7.13 +6.45 +7.78
+    trees 4 cards: +0.30 [+0.18, +0.44]; per seed +0.20 +0.36 +0.35
+    trees 5 cards: -3.98 [-4.66, -3.29]; per seed -4.23 -3.75 -3.95
+    trees 6 cards: +0.58 [+0.35, +0.81]; per seed +0.52 +0.46 +0.76
+    trees 7 cards: -7.59 [-8.52, -6.71]; per seed -6.87 -7.98 -7.92
+    trees 8 cards: +2.87 [+2.16, +3.63]; per seed +3.72 +2.79 +2.10
+
+Fairness check: 6-card loss within 0.5 of the old encoding (MLP 3.18/2.65/2.42/2.03, trees 2.77/2.32/1.92/1.78)
+  mlp 250: 3.48 vs 3.18 (delta +0.30) ok
+  mlp 500: 3.45 vs 2.65 (delta +0.80) OUT
+  mlp 1500: 2.78 vs 2.42 (delta +0.36) ok
+  mlp 4000: 2.18 vs 2.03 (delta +0.15) ok
+  mlp: FAIL — uninformative; the encoding lost too much information
+  trees 250: 2.63 vs 2.77 (delta -0.14) ok
+  trees 500: 2.32 vs 2.32 (delta +0.00) ok
+  trees 1500: 1.90 vs 1.92 (delta -0.02) ok
+  trees 4000: 1.80 vs 1.78 (delta +0.02) ok
+  trees: PASS
+
+Predictions (observed Yes = 95% CI entirely above 0):
+  a  observed Yes  Gemini Yes     Mine Yes     +7.12 [+6.07, +8.16]  Part A, MLP: mix 6+7 loses more than 6-only on 8 cards
+  b  observed Yes  Gemini Yes     Mine Yes     +2.87 [+2.16, +3.63]  Part A, trees: the same
+  c  observed Yes  Gemini Yes     Mine Yes     +1.00 [+0.40, +1.61]  Part B, MLP, 250 -> 4,000 deals: 7-card loss rises
+  d  observed No   Gemini No      Mine No      -1.51 [-2.03, -1.00]  Part B, MLP: 8-card loss rises
+  e4 observed No   Gemini No      Mine No      -0.55 [-0.73, -0.39]  Part B, MLP: 4-card loss rises
+  e5 observed No   Gemini Unsure  Mine Yes     +0.39 [-0.21, +0.97]  Part B, MLP: 5-card loss rises
+
+total time 3319s

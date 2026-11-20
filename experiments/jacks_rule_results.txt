@@ -1,0 +1,8 @@
+sanity: deals without jacks match solver.py on 100 deals
+
+3000 random deals from the 44-card deck (seed 1)
+deals with at least one jack: 45.9%
+  all deals              P1 wins  70.3%  ties  6.5%  loses  23.1%  mean margin  +6.63  (3000 deals)
+  deals with a jack      P1 wins  79.3%  ties  3.6%  loses  17.1%  mean margin +10.33  (1378 deals)
+  deals without a jack   P1 wins  62.7%  ties  9.0%  loses  28.3%  mean margin  +3.48  (1622 deals)
+official 40-card game for comparison: P1 wins 61.4%, ties 8.2%, loses 30.5%, mean +3.27
