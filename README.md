@@ -4,6 +4,8 @@
 
 *One Card to Rule Them All.*
 
+> ⓘ The cards are dealt face up at random. After that the game is deterministic: both players see every card, and nothing random happens during play.
+
 ![Six cards dealt face up in a row on a green table: 5♠ 7♦ 6♥ 7♠ 8♥ 8♠, with poker chips beside them](table.png)
 
 *The deal 5♠ 7♦ 6♥ 7♠ 8♥ 8♠. Played perfectly, it includes both swaps, a trump card and pairs on both sides, and Player 1 wins 86 to 83.* [Play this hand.](https://rob-mccormack.github.io/last-suit-standing/)
