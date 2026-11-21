@@ -1,6 +1,6 @@
 # Last Suit Standing: the full repository in one file
 
-Generated 2026-11-20 from commit `3b49b9b` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
+Generated 2026-11-21 from commit `33d7a27` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
 
 ## Notes for the AI reading this
 
@@ -76,9 +76,11 @@ Generated 2026-11-20 from commit `3b49b9b` by `tools/make_llms_full.py`. Do not 
 
 *One Card to Rule Them All.*
 
+> ⓘ The cards are dealt face up at random. After that the game is deterministic: both players see every card, and nothing random happens during play.
+
 ![Six cards dealt face up in a row on a green table: 5♠ 7♦ 6♥ 7♠ 8♥ 8♠, with poker chips beside them](table.png)
 
-*The deal 5♠ 7♦ 6♥ 7♠ 8♥ 8♠. Played perfectly, it includes both swaps, a trump card and pairs on both sides, and Player 1 wins 86 to 83.*
+*The deal 5♠ 7♦ 6♥ 7♠ 8♥ 8♠. Played perfectly, it includes both swaps, a trump card and pairs on both sides, and Player 1 wins 86 to 83.* [Play this hand.](https://rob-mccormack.github.io/last-suit-standing/)
 
 A five-minute card game for two players that is also an exact laboratory for AI research. A few end-of-game rules (a trump-setting last card, a final swap, doubled scoring) reach backward and overturn local reasoning: the obvious move is usually right, and badly wrong when it isn't. Trained models learn the surface patterns, not the logic of the ending. Most AI testing can only estimate blind spots like this; because this game is solved exactly, they are measured directly against ground truth.
 
@@ -169,7 +171,6 @@ Last Suit Standing is one of three small, exactly solved games used to find wher
 | --- | --- |
 | [THREE_PROJECTS.md](THREE_PROJECTS.md) | How PSDG, Collapse3 and Last Suit Standing fit together |
 | [COLLAPSE3.md](COLLAPSE3.md) | What replicates from Collapse3, what differs, what is new |
-| [TODO.md](TODO.md) | Planned work |
 | [llms-full.txt](llms-full.txt) | The whole repository in one file, to upload to an AI model. Rebuild with `python3 tools/make_llms_full.py` |
 
 ## License
