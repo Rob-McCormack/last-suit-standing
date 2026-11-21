@@ -20,6 +20,13 @@ Six cards from a 40-card deck (ace to 10 in four suits) are dealt face up. A car
 
 Most points wins. A game takes about five minutes. [Full rules](RULES.md)
 
+## In brief
+
+- A perfect opponent found only about 60 to 70 percent of the points a worst-case opponent could take from a trained model.
+- In about one game in six, the perfect-opponent test found nothing wrong, and the worst-case opponent still took points.
+- One well-chosen mistake per game found the exact worst case in about 9 games out of 10.
+- Testing against strong play is already known to miss weaknesses. This game measures how much.
+
 ## Main findings
 
 Small neural networks and gradient-boosted trees were trained from scratch on the solver's exact values, then tested against perfect play. For the later experiments, the predictions were committed to git before the runs, and misses are reported alongside hits.
