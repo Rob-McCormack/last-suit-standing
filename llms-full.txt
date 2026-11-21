@@ -1,6 +1,6 @@
 # Last Suit Standing: the full repository in one file
 
-Generated 2026-11-21 from commit `c8d83d0` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
+Generated 2026-11-21 from commit `29da3c4` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
 
 ## Notes for the AI reading this
 
@@ -183,6 +183,10 @@ Last Suit Standing is one of three small, exactly solved games used to find wher
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+Rob McCormack designed the game. The ideas and the experiments are his. Language models helped draft text, check reasoning, and suggest experiments. The measured results were checked by hand, and predictions for the later experiments were saved before those runs.
+
+I am looking for collaborators who study how AI is tested. A short note on this repository is enough.
 ~~~~~
 
 ## File: RULES.md
