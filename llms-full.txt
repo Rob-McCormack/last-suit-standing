@@ -1,6 +1,6 @@
 # Last Suit Standing: the full repository in one file
 
-Generated 2026-11-21 from commit `33d7a27` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
+Generated 2026-11-21 from commit `c8d83d0` by `tools/make_llms_full.py`. Do not edit by hand; rebuild it instead.
 
 ## Notes for the AI reading this
 
@@ -91,6 +91,13 @@ A five-minute card game for two players that is also an exact laboratory for AI 
 Six cards from a 40-card deck (ace to 10 in four suits) are dealt face up. A card's value is the number on it, and points scored during play are kept as poker chips. Players take turns offering two neighboring cards; the opponent takes one and takes chips equal to its value, while the offerer takes chips equal to the value of the card left behind, which stays in the row. The last card sets trump and scores once more for the last offerer. Each player then gets one chance to swap one card with the opponent's stack. Finally, stack cards score their values again, doubled for trump and doubled for matching pairs (×4 for both).
 
 Most points wins. A game takes about five minutes. [Full rules](RULES.md)
+
+## In brief
+
+- A perfect opponent found only about 60 to 70 percent of the points a worst-case opponent could take from a trained model.
+- In about one game in six, the perfect-opponent test found nothing wrong, and the worst-case opponent still took points.
+- One well-chosen mistake per game found the exact worst case in about 9 games out of 10.
+- Testing against strong play is already known to miss weaknesses. This game measures how much.
 
 ## Main findings
 
