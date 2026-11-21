@@ -111,3 +111,7 @@ Last Suit Standing is one of three small, exactly solved games used to find wher
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+Rob McCormack designed the game. The ideas and the experiments are his. Language models helped draft text, check reasoning, and suggest experiments. The measured results were checked by hand, and predictions for the later experiments were saved before those runs.
+
+I am looking for collaborators who study how AI is tested. A short note on this repository is enough.
